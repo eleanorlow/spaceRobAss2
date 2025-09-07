@@ -1,0 +1,3 @@
+[console_scripts]
+graph_search_controller_node = path_planner.controller_node:main
+

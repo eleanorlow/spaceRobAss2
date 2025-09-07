@@ -1,0 +1,44 @@
+[0.474s] Invoking command in '/home/eleanorlow/spcrob/ros_ws2/src/path_planner': PYTHONPATH=/home/eleanorlow/spcrob/ros_ws2/build/path_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/path_planner build --build-base /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build install --record /home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log --single-version-externally-managed install_data
+[0.653s] running egg_info
+[0.653s] writing ../../build/path_planner/path_planner.egg-info/PKG-INFO
+[0.653s] writing dependency_links to ../../build/path_planner/path_planner.egg-info/dependency_links.txt
+[0.653s] writing entry points to ../../build/path_planner/path_planner.egg-info/entry_points.txt
+[0.654s] writing requirements to ../../build/path_planner/path_planner.egg-info/requires.txt
+[0.654s] writing top-level names to ../../build/path_planner/path_planner.egg-info/top_level.txt
+[0.655s] reading manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+[0.656s] writing manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+[0.656s] running build
+[0.656s] running build_py
+[0.656s] running install
+[0.656s] running install_lib
+[0.657s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+[0.657s] copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/graph_search.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+[0.657s] copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/graph.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+[0.657s] copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/__init__.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+[0.657s] copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/controller_node.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+[0.657s] copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/path_smoother.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+[0.657s] copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/map.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+[0.658s] byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/graph_search.py to graph_search.cpython-310.pyc
+[0.659s] byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/graph.py to graph.cpython-310.pyc
+[0.661s] byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/__init__.py to __init__.cpython-310.pyc
+[0.661s] byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/controller_node.py to controller_node.cpython-310.pyc
+[0.662s] byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/path_smoother.py to path_smoother.cpython-310.pyc
+[0.662s] byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/map.py to map.cpython-310.pyc
+[0.663s] running install_data
+[0.663s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index
+[0.663s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index
+[0.663s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index/packages
+[0.663s] copying resource/path_planner -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index/packages
+[0.663s] copying package.xml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner
+[0.663s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/launch
+[0.663s] copying launch/path_planner.launch.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/launch
+[0.664s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[0.664s] copying config/planner_conf.rviz -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[0.706s] copying config/bastide_map.mat -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[0.787s] copying config/parameters.yaml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[0.788s] running install_egg_info
+[0.789s] Copying ../../build/path_planner/path_planner.egg-info to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner-0.0.0-py3.10.egg-info
+[0.789s] running install_scripts
+[0.806s] Installing graph_search_controller_node script to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/path_planner
+[0.806s] writing list of installed files to '/home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log'
+[0.830s] Invoked command in '/home/eleanorlow/spcrob/ros_ws2/src/path_planner' returned '0': PYTHONPATH=/home/eleanorlow/spcrob/ros_ws2/build/path_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/path_planner build --build-base /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build install --record /home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log --single-version-externally-managed install_data

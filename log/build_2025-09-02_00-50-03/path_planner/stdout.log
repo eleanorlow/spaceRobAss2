@@ -1,0 +1,47 @@
+running develop
+Removing /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path-planner.egg-link (link to .)
+running egg_info
+writing ../../build/path_planner/path_planner.egg-info/PKG-INFO
+writing dependency_links to ../../build/path_planner/path_planner.egg-info/dependency_links.txt
+writing entry points to ../../build/path_planner/path_planner.egg-info/entry_points.txt
+writing requirements to ../../build/path_planner/path_planner.egg-info/requires.txt
+writing top-level names to ../../build/path_planner/path_planner.egg-info/top_level.txt
+reading manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+writing manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib
+creating /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+copying path_planner/graph_search.py -> /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+copying path_planner/graph.py -> /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+copying path_planner/__init__.py -> /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+copying path_planner/controller_node.py -> /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+copying path_planner/path_smoother.py -> /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+copying path_planner/map.py -> /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+running install
+running install_lib
+creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/graph_search.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/graph.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/__init__.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/controller_node.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/path_smoother.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/map.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/graph_search.py to graph_search.cpython-310.pyc
+byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/graph.py to graph.cpython-310.pyc
+byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/controller_node.py to controller_node.cpython-310.pyc
+byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/path_smoother.py to path_smoother.cpython-310.pyc
+byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/map.py to map.cpython-310.pyc
+running install_data
+copying resource/path_planner -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index/packages
+copying package.xml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner
+copying launch/path_planner.launch.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/launch
+copying config/planner_conf.rviz -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+copying config/bastide_map.mat -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+copying config/parameters.yaml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+running install_egg_info
+Copying ../../build/path_planner/path_planner.egg-info to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner-0.0.0-py3.10.egg-info
+running install_scripts
+Installing graph_search_controller_node script to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/path_planner
+writing list of installed files to '/home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log'

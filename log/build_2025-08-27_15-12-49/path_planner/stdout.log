@@ -1,0 +1,28 @@
+running develop
+running egg_info
+creating path_planner.egg-info
+writing path_planner.egg-info/PKG-INFO
+writing dependency_links to path_planner.egg-info/dependency_links.txt
+writing entry points to path_planner.egg-info/entry_points.txt
+writing requirements to path_planner.egg-info/requires.txt
+writing top-level names to path_planner.egg-info/top_level.txt
+writing manifest file 'path_planner.egg-info/SOURCES.txt'
+reading manifest file 'path_planner.egg-info/SOURCES.txt'
+writing manifest file 'path_planner.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path-planner.egg-link (link to .)
+Installing graph_search_controller_node script to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/path_planner
+
+Installed /home/eleanorlow/spcrob/ros_ws2/build/path_planner
+running symlink_data
+creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index
+creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index
+creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index/packages
+symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/resource/path_planner -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index/packages
+symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/package.xml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner
+creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/launch
+symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/launch/path_planner.launch.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/launch
+creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/config/planner_conf.rviz -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/config/bastide_map.mat -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/config/parameters.yaml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config

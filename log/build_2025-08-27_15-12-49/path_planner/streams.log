@@ -1,0 +1,30 @@
+[0.721s] Invoking command in '/home/eleanorlow/spcrob/ros_ws2/build/path_planner': PYTHONPATH=/home/eleanorlow/spcrob/ros_ws2/build/path_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build --no-deps symlink_data
+[0.896s] running develop
+[1.019s] running egg_info
+[1.019s] creating path_planner.egg-info
+[1.019s] writing path_planner.egg-info/PKG-INFO
+[1.019s] writing dependency_links to path_planner.egg-info/dependency_links.txt
+[1.019s] writing entry points to path_planner.egg-info/entry_points.txt
+[1.019s] writing requirements to path_planner.egg-info/requires.txt
+[1.020s] writing top-level names to path_planner.egg-info/top_level.txt
+[1.020s] writing manifest file 'path_planner.egg-info/SOURCES.txt'
+[1.021s] reading manifest file 'path_planner.egg-info/SOURCES.txt'
+[1.022s] writing manifest file 'path_planner.egg-info/SOURCES.txt'
+[1.023s] running build_ext
+[1.023s] Creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path-planner.egg-link (link to .)
+[1.024s] Installing graph_search_controller_node script to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/path_planner
+[1.024s] 
+[1.024s] Installed /home/eleanorlow/spcrob/ros_ws2/build/path_planner
+[1.024s] running symlink_data
+[1.024s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index
+[1.024s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index
+[1.024s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index/packages
+[1.024s] symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/resource/path_planner -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/ament_index/resource_index/packages
+[1.024s] symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/package.xml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner
+[1.024s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/launch
+[1.024s] symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/launch/path_planner.launch.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/launch
+[1.025s] creating /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[1.025s] symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/config/planner_conf.rviz -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[1.025s] symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/config/bastide_map.mat -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[1.025s] symbolically linking /home/eleanorlow/spcrob/ros_ws2/build/path_planner/config/parameters.yaml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[1.044s] Invoked command in '/home/eleanorlow/spcrob/ros_ws2/build/path_planner' returned '0': PYTHONPATH=/home/eleanorlow/spcrob/ros_ws2/build/path_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build --no-deps symlink_data

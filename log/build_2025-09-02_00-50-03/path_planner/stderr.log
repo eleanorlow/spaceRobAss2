@@ -1,0 +1,5 @@
+  File "/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/graph_search.py", line 48
+    if distance_to_goal < best_neighbour_distance
+                                                 ^
+SyntaxError: expected ':'
+

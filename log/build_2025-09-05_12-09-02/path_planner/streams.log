@@ -1,0 +1,22 @@
+[1.136s] Invoking command in '/home/eleanorlow/spcrob/ros_ws2/src/path_planner': PYTHONPATH=/home/eleanorlow/spcrob/ros_ws2/build/path_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/path_planner build --build-base /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build install --record /home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log --single-version-externally-managed install_data
+[1.301s] running egg_info
+[1.302s] writing ../../build/path_planner/path_planner.egg-info/PKG-INFO
+[1.302s] writing dependency_links to ../../build/path_planner/path_planner.egg-info/dependency_links.txt
+[1.302s] writing entry points to ../../build/path_planner/path_planner.egg-info/entry_points.txt
+[1.302s] writing requirements to ../../build/path_planner/path_planner.egg-info/requires.txt
+[1.302s] writing top-level names to ../../build/path_planner/path_planner.egg-info/top_level.txt
+[1.303s] reading manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+[1.322s] writing manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+[1.322s] running build
+[1.322s] running build_py
+[1.323s] running install
+[1.323s] running install_lib
+[1.324s] running install_data
+[1.324s] copying config/parameters.yaml -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/share/path_planner/config
+[1.324s] running install_egg_info
+[1.325s] removing '/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner-0.0.0-py3.10.egg-info' (and everything under it)
+[1.325s] Copying ../../build/path_planner/path_planner.egg-info to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner-0.0.0-py3.10.egg-info
+[1.347s] running install_scripts
+[1.368s] Installing graph_search_controller_node script to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/path_planner
+[1.368s] writing list of installed files to '/home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log'
+[1.385s] Invoked command in '/home/eleanorlow/spcrob/ros_ws2/src/path_planner' returned '0': PYTHONPATH=/home/eleanorlow/spcrob/ros_ws2/build/path_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/path_planner build --build-base /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build install --record /home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log --single-version-externally-managed install_data
