@@ -1,0 +1,5 @@
+  File "/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/graph_search.py", line 288
+    if unvisited_set[node_in_unvisited_idx] > 0
+                                               ^
+SyntaxError: expected ':'
+

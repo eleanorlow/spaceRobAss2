@@ -55,9 +55,6 @@ class GraphSearch:
 
             current = best_neighbour
             path.append(current)
-
-
-
             
         self.parent_logger_.info('Goal found!')
         return path
@@ -83,15 +80,13 @@ class GraphSearch:
         # Loop until solution found or graph is disconnected
         while len(unvisited_set) > 0:
 
-            
-
             ####################
             ## YOUR CODE HERE ##
             ## Task 3         ##
             ####################
             # Select a node
             # hint: self.get_minimum_cost_node(unvisited_set) will help you find the node with the minimum cost
-            node_in_unvisited_idx = self.get_minimum_cost_node(unvisited_set)
+            node_in_unvisited_idx = self.get_minimum_cost_node(unvisited_set, heuristic=True)
             node_idx = unvisited_set[node_in_unvisited_idx]
             current_node = self.graph_.nodes_[node_idx]
 
@@ -105,9 +100,6 @@ class GraphSearch:
             visited_set.append(node_idx)
             unvisited_set.pop(node_in_unvisited_idx)
 
-
-
-            
 
             ####################
             ## YOUR CODE HERE ##
@@ -166,11 +158,7 @@ class GraphSearch:
                         ## YOUR CODE HERE ##
                         ## Task 3         ##
                         ####################
-                         # you can remove this line after you've completed the task
-                        # if ??:
-                        #     neighbour.parent_node = ??
-                        #     neighbour.cost_to_node = ??
-                        #     neighbour.cost_to_node_to_goal_heuristic = ??
+
                         if tentative_cost_to_node < neighbour.cost_to_node:
                             neighbour.parent_node = current_node
                             neighbour.cost_to_node = tentative_cost_to_node
@@ -193,29 +181,31 @@ class GraphSearch:
                         ## YOUR CODE HERE ##
                         ## Task 3         ##
                         ####################
-                        # neighbour.parent_node = ??
-                        # neighbour.cost_to_node = ??
-                        # neighbour.cost_to_node_to_goal_heuristic = ??
+
 
                         neighbour.parent_node = current_node
                         neighbour.cost_to_node = tentative_cost_to_node
                         neighbour.cost_to_node_to_goal_heuristic = tentative_cost_to_node_to_goal_heuristic
                 
 
-
-
             # Visualise the current search status in RVIZ
             self.visualise_search_(visited_set, unvisited_set)
                    
 
-    def get_minimum_cost_node(self, unvisited_set):
+    def get_minimum_cost_node(self, unvisited_set, heuristic=True):
         """Find the vertex with the minimum cost"""
 
         # There's more efficient ways of doing this...
         min_cost = 99999999
         min_idx = None
+
         for idx in range(len(unvisited_set)):
-            cost = self.graph_.nodes_[unvisited_set[idx]].cost_to_node_to_goal_heuristic
+            node = self.graph_.nodes_[unvisited_set[idx]]
+            if heuristic:
+                cost = node.cost_to_node_to_goal_heuristic
+            else:
+                cost = node.cost_to_node
+
             if cost < min_cost:
                 min_cost = cost
                 min_idx = idx
@@ -240,8 +230,6 @@ class GraphSearch:
 
         path.reverse()
 
-
-        
         return path
 
     def find_connected_nodes(self, start_idx):
@@ -254,129 +242,104 @@ class GraphSearch:
         Hint 2: Can we use A* heuristic if there's no goal?
         """
 
-        ####################
-        ## YOUR CODE HERE ##
-        ## Task 8         ##
-        ####################
+        ###################
+        # YOUR CODE HERE ##
+        # Task 8         ##
+        ###################
 
-        # # Set all parents and costs to zero
-        # for n in self.graph_.nodes_:
-        #     n.cost_to_node = 9999999 # a large number
-        #     n.cost_to_node_to_goal_heuristic = 999999999 # a large number
-        #     n.parent_node = None # invalid to begin with
+        # Set all parents and costs to zero
+        for n in self.graph_.nodes_:
+            n.cost_to_node = 9999999 # a large number
+            n.cost_to_node_to_goal_heuristic = 999999999 # a large number
+            n.parent_node = None # invalid to begin with
 
-        # # Setup sets
-        # unvisited_set = []
-        # visited_set = []
+        # Setup sets
+        unvisited_set = []
+        visited_set = []
 
-        # # Add start node to visited set
-        # unvisited_set.append(start_idx)
-        # self.graph_.nodes_[start_idx].cost_to_node = 0
-        # self.graph_.nodes_[start_idx].cost_to_node_to_goal_heuristic = 0
+        # Add start node to visited set
+        unvisited_set.append(start_idx)
+        self.graph_.nodes_[start_idx].cost_to_node = 0
+        self.graph_.nodes_[start_idx].cost_to_node_to_goal_heuristic = 0
 
-        # # Loop until solution found
-        # while len(unvisited_set) > 0:
+        # Loop until solution found
+        while len(unvisited_set) > 0:
 
-        #     # Select a node
-        #     # hint: self.get_minimum_cost_node(unvisited_set) will help you find the node with the minimum cost
+            # Select a node
+            # hint: self.get_minimum_cost_node(unvisited_set) will help you find the node with the minimum cost
 
-        #     #########################
-        #     ## YOUR CODE GOES HERE ##
-        #     #########################
+            #########################
+            ## YOUR CODE GOES HERE ##
+            #########################
+            print("Unvisited set:", unvisited_set)
+            print([self.graph_.nodes_[i].cost_to_node for i in unvisited_set])
+
+            node_in_unvisited_idx = self.get_minimum_cost_node(unvisited_set, heuristic=False)
+            node_idx = unvisited_set[node_in_unvisited_idx]
+            current_node = self.graph_.nodes_[node_idx]
 
 
 
-        #     # Move the node to the visited set
+            # Move node to visited
+            visited_set.append(node_idx)
+            unvisited_set.pop(node_in_unvisited_idx)
 
 
 
+            # For each neighbour of the node
+            for neighbour_idx in range(len(self.graph_.nodes_[node_idx].neighbours)):
 
-        #     # For each neighbour of the node
-        #     for neighbour_idx in range(len(self.graph_.nodes_[node_idx].neighbours)):
+                # For convenience, extract the neighbour and the edge cost from the arrays
+                neighbour = self.graph_.nodes_[node_idx].neighbours[neighbour_idx]
+                neighbour_cost = self.graph_.nodes_[node_idx].neighbour_costs[neighbour_idx]
 
-        #         # For convenience, extract the neighbour and the edge cost from the arrays
-        #         neighbour = self.graph_.nodes_[node_idx].neighbours[neighbour_idx]
-        #         neighbour_cost = self.graph_.nodes_[node_idx].neighbour_costs[neighbour_idx]
-
-        #         # Check if neighbours is already in visited
-        #         if neighbour.idx in visited_set:
+                # Check if neighbours is already in visited
+                if neighbour.idx in visited_set:
                     
-        #             # Do nothing
-        #             pass
+                    # Do nothing
+                    pass
                 
-        #         else:
+                else:
 
-        #             # Compute the cost of this neighbour node
+                    # Compute the cost of this neighbour node
                     
-        #             ##########################
-        #             ## YOUR CODE GOES HERE  ##
-        #             ##########################
+                    ##########################
+                    ## YOUR CODE GOES HERE  ##
+                    ##########################
                     
-                    
+                    tentative_cost = current_node.cost_to_node + neighbour_cost   
 
 
-        #             # Check if neighbours is already in unvisited
-        #             if neighbour.idx in unvisited_set:
+                    # Check if neighbours is already in unvisited
+                    if neighbour.idx in unvisited_set:
 
-        #                 pass # you can remove this line after you've completed the following
-
-        #                 # If the cost is lower than the previous cost for this node
-        #                 # Then update it to the new cost
-        #                 # Also, update the parent pointer to point to the new parent 
-
-        #                 ##########################
-        #                 ## YOUR CODE GOES HERE  ##
-        #                 ## FIX THE ?? BELOW     ##
-        #                 ##########################
-        #                 # if ??:
-        #                 #     neighbour.parent_node = ??
-        #                 #     neighbour.cost_to_node = ??
-
-                        
-
-        #             else:
-
-        #                 # Add it to the unvisited set
-        #                 unvisited_set.append(neighbour.idx)
-
-                        # Initialise the cost and the parent pointer
-                        # hint: this will be similar to your answer above
+                        # If the cost is lower than the previous cost for this node
+                        # Then update it to the new cost
+                        # Also, update the parent pointer to point to the new parent 
 
                         ##########################
                         ## YOUR CODE GOES HERE  ##
                         ## FIX THE ?? BELOW     ##
                         ##########################
-                        # neighbour.parent_node = ??
-                        # neighbour.cost_to_node = ??
+                        if tentative_cost < neighbour.cost_to_node:
+                            neighbour.parent_node = current_node
+                            neighbour.cost_to_node = tentative_cost
 
-        for n in self.graph_.nodes_:
-            n.cost_to_node = float("inf")
-            n.parent_node = None
+                        
 
-            unvisited_set = [start_idx]
-            visited_set = []
-            self.graph_.nodes_[start_idx].cost_to_node = 0
+                    else:
 
-            while len(unvisited_set) > 0:
-                node_idx = self.get_minimum_cost_node(unvisited_set)
-                current_node = self.graph_.nodes_[node_idx]
-
-                unvisited_set.remove(node_idx)
-                visited_set.append(node_idx)
-
-                for k, neighbour in enumerate(current_node.neighbours):
-                    edge_cost = current_node.neighbour_costs[k]
-                    new_cost = current_node.cost_to_node + edge_cost
-
-                    if new_cost < neighbour.cost_to_node:
-                        neighbour.cost_to_node = new_cost
-                        neighbour.parent_node = current_node
-
-                    if neighbour.idx not in visited_set and neighbour.idx not in unvisited_set:
+                        # Initialise the cost and the parent pointer
+                        # hint: this will be similar to your answer above
+                        #########################
+                        # YOUR CODE GOES HERE  ##
+                        # FIX THE ?? BELOW     ##
+                        #########################
                         unvisited_set.append(neighbour.idx)
+                        neighbour.parent_node = current_node
+                        neighbour.cost_to_node = tentative_cost
+
+
 
         return visited_set
 
-                        
-        
-        # return visited_set

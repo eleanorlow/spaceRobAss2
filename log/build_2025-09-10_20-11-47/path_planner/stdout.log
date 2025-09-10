@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/path_planner/path_planner.egg-info/PKG-INFO
+writing dependency_links to ../../build/path_planner/path_planner.egg-info/dependency_links.txt
+writing entry points to ../../build/path_planner/path_planner.egg-info/entry_points.txt
+writing requirements to ../../build/path_planner/path_planner.egg-info/requires.txt
+writing top-level names to ../../build/path_planner/path_planner.egg-info/top_level.txt
+reading manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+writing manifest file '../../build/path_planner/path_planner.egg-info/SOURCES.txt'
+running build
+running build_py
+copying path_planner/graph_search.py -> /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner
+running install
+running install_lib
+copying /home/eleanorlow/spcrob/ros_ws2/build/path_planner/build/lib/path_planner/graph_search.py -> /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner
+byte-compiling /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner/graph_search.py to graph_search.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/path_planner/path_planner.egg-info to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/python3.10/site-packages/path_planner-0.0.0-py3.10.egg-info
+running install_scripts
+Installing graph_search_controller_node script to /home/eleanorlow/spcrob/ros_ws2/install/path_planner/lib/path_planner
+writing list of installed files to '/home/eleanorlow/spcrob/ros_ws2/build/path_planner/install.log'

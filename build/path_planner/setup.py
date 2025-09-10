@@ -1,1 +1,0 @@
-/home/eleanorlow/spcrob/ros_ws2/src/path_planner/setup.py
