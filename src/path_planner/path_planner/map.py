@@ -65,7 +65,7 @@ class Map:
         # to the nearest obstacle, as defined in the self.obstacle_map_
         # To keep things simple, define distances in units of pixels (don't convert to meters)
         (rows, cols) = self.obstacle_map_.shape
-        self.distance_transform_map_ = np.full((rows, cols), None)
+        self.distance_transform_map_ = np.full((rows, cols), 9999999)
 
         self.parent_logger_.warn('Computing distance transform map...')
 
@@ -74,33 +74,29 @@ class Map:
         ## Task 9         ##
         ####################
 
-        
+        self.distance_transform_map_[self.obstacle_map_ == 1] = 0
+    # First pass: top-left to bottom-right
+        for r in range(1, rows - 1):
+            for c in range(1, cols - 1):
+                if self.obstacle_map_[r, c] == 1: 
+                    self.distance_transform_map_[r, c] = 0
+                else:
+                    left  = self.distance_transform_map_[r, c - 1] + 1
+                    above = self.distance_transform_map_[r - 1, c] + 1
+                    self.distance_transform_map_[r, c] = min(self.distance_transform_map_[r, c], left, above)
+
+        # Second pass: bottom-right to top-left
+        for r in range(rows - 2, 0, -1):
+            for c in range(cols - 2, 0, -1):
+                if self.obstacle_map_[r, c] == 1:
+                    self.distance_transform_map_[r, c] = 0
+                else:
+                    right = self.distance_transform_map_[r, c + 1] + 1
+                    below = self.distance_transform_map_[r + 1, c] + 1
+                    new_val = min(right, below)
+                    self.distance_transform_map_[r, c] = min(self.distance_transform_map_[r, c], new_val)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
 
         
 

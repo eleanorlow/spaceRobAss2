@@ -55,9 +55,6 @@ class GraphSearch:
 
             current = best_neighbour
             path.append(current)
-
-
-
             
         self.parent_logger_.info('Goal found!')
         return path
@@ -83,8 +80,6 @@ class GraphSearch:
         # Loop until solution found or graph is disconnected
         while len(unvisited_set) > 0:
 
-            
-
             ####################
             ## YOUR CODE HERE ##
             ## Task 3         ##
@@ -105,9 +100,6 @@ class GraphSearch:
             visited_set.append(node_idx)
             unvisited_set.pop(node_in_unvisited_idx)
 
-
-
-            
 
             ####################
             ## YOUR CODE HERE ##
@@ -166,11 +158,7 @@ class GraphSearch:
                         ## YOUR CODE HERE ##
                         ## Task 3         ##
                         ####################
-                         # you can remove this line after you've completed the task
-                        # if ??:
-                        #     neighbour.parent_node = ??
-                        #     neighbour.cost_to_node = ??
-                        #     neighbour.cost_to_node_to_goal_heuristic = ??
+
                         if tentative_cost_to_node < neighbour.cost_to_node:
                             neighbour.parent_node = current_node
                             neighbour.cost_to_node = tentative_cost_to_node
@@ -193,16 +181,12 @@ class GraphSearch:
                         ## YOUR CODE HERE ##
                         ## Task 3         ##
                         ####################
-                        # neighbour.parent_node = ??
-                        # neighbour.cost_to_node = ??
-                        # neighbour.cost_to_node_to_goal_heuristic = ??
+
 
                         neighbour.parent_node = current_node
                         neighbour.cost_to_node = tentative_cost_to_node
                         neighbour.cost_to_node_to_goal_heuristic = tentative_cost_to_node_to_goal_heuristic
                 
-
-
 
             # Visualise the current search status in RVIZ
             self.visualise_search_(visited_set, unvisited_set)
@@ -227,20 +211,6 @@ class GraphSearch:
                 min_idx = idx
         return min_idx
 
-    # def get_minimum_cost_node_vtwo(self, unvisited_set):
-    #     """Find the vertex with the minimum cost"""
-
-
-    #     # There's more efficient ways of doing this...
-    #     min_cost = 99999999
-    #     min_idx = None
-    #     for idx in range(len(unvisited_set)):
-    #         cost = self.graph_.nodes_[unvisited_set[idx]].cost_to_node
-    #         if cost < min_cost:
-    #             min_cost = cost
-    #             min_idx = idx
-    #     return min_idx
-
     def generate_path(self, goal_idx):
         """Generate the path by following the parents from the goal back to the start"""
 
@@ -260,8 +230,6 @@ class GraphSearch:
 
         path.reverse()
 
-
-        
         return path
 
     def find_connected_nodes(self, start_idx):
@@ -303,8 +271,6 @@ class GraphSearch:
             #########################
             ## YOUR CODE GOES HERE ##
             #########################
-            print("Unvisited set:", unvisited_set)
-            print([self.graph_.nodes_[i].cost_to_node for i in unvisited_set])
 
             node_in_unvisited_idx = self.get_minimum_cost_node(unvisited_set, heuristic=False)
             node_idx = unvisited_set[node_in_unvisited_idx]
@@ -345,10 +311,6 @@ class GraphSearch:
                     # Check if neighbours is already in unvisited
                     if neighbour.idx in unvisited_set:
 
-                        if tentative_cost < neighbour.cost_to_node:
-                            neighbour.parent_node = current_node
-                            neighbour.cost_to_node = tentative_cost
-
                         # If the cost is lower than the previous cost for this node
                         # Then update it to the new cost
                         # Also, update the parent pointer to point to the new parent 
@@ -357,18 +319,16 @@ class GraphSearch:
                         ## YOUR CODE GOES HERE  ##
                         ## FIX THE ?? BELOW     ##
                         ##########################
-                        # if ??:
-                        #     neighbour.parent_node = ??
-                        #     neighbour.cost_to_node = ??
+                        if tentative_cost < neighbour.cost_to_node:
+                            neighbour.parent_node = current_node
+                            neighbour.cost_to_node = tentative_cost
 
                         
 
                     else:
 
-
                         # Initialise the cost and the parent pointer
                         # hint: this will be similar to your answer above
-
                         #########################
                         # YOUR CODE GOES HERE  ##
                         # FIX THE ?? BELOW     ##

@@ -271,8 +271,6 @@ class GraphSearch:
             #########################
             ## YOUR CODE GOES HERE ##
             #########################
-            print("Unvisited set:", unvisited_set)
-            print([self.graph_.nodes_[i].cost_to_node for i in unvisited_set])
 
             node_in_unvisited_idx = self.get_minimum_cost_node(unvisited_set, heuristic=False)
             node_idx = unvisited_set[node_in_unvisited_idx]
