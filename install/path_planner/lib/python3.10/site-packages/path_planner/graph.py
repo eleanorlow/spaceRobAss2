@@ -304,21 +304,37 @@ class Graph:
         ## Task 10        ##
         ####################
         distance_transform_map = self.map_.distance_transform_map_
+        
+        # Task 7 #
+        # idx = 0
+        
+        # while idx < num_nodes:
+        #     x = random.randint(self.map_.min_x_, self.map_.max_x_-1)
+        #     y = random.randint(self.map_.min_y_, self.map_.max_y_-1)
 
+        #     if not self.map_.is_occupied(x, y):
+                
+        #         self.nodes_.append(Node(x, y, idx))
+        #         idx += 1
+        idx = 0
 
+        while idx < num_nodes:
+            x = random.randint(self.map_.min_x_, self.map_.max_x_ - 1)
+            y = random.randint(self.map_.min_y_, self.map_.max_y_ - 1)
 
+            if not self.map_.is_occupied(x, y):
+                d_center = self.map_.distance_transform_map_[y, x] 
 
+                half_window = 5
+                rmin, rmax = max(0, y - half_window), min(self.map_.distance_transform_map_.shape[0], y + half_window + 1)
+                cmin, cmax = max(0, x - half_window), min(self.map_.distance_transform_map_.shape[1], x + half_window + 1)
 
+                neighborhood = self.map_.distance_transform_map_[rmin:rmax, cmin:cmax]
+                d_max = np.max(neighborhood)
 
-
-
-
-
-
-
-
-
-
+                if d_center >= 0.7 * d_max:
+                    self.nodes_.append(Node(x, y, idx))
+                    idx += 1
 
 
 
@@ -349,20 +365,18 @@ class Graph:
                                 ## YOUR CODE HERE         ##
                                 ## TASK 6 -- after TASK 10##
                                 ############################
-                                energy_cost = distance # Comment this out once you've done this Task
-                                # energy_cost = ??
+                                mew = 0.1
+                                m = 1025
+                                g = 3.71
+
+                                xi, yi, zi = self.map_.pixel_to_world(node_i.x, node_i.y)
+                                xj, yj, zj = self.map_.pixel_to_world(node_j.x, node_j.y)
+
+                                theta = math.atan((zi - zj)/ (math.sqrt((xi - xj)**2 + (yi - yj)**2)))
+                                dx = math.sqrt((xi - xj)**2 + (yi - yj)**2 + (zi - zj)**2)
+
+                                energy_cost = abs((mew*m*g*math.cos(theta)+m*g*math.sin(theta))*dx)
                                 
-
-
-
-
-
-
-
-
-
-
-
 
                             else:
 

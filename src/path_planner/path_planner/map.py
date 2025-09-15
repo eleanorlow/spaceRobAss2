@@ -75,7 +75,6 @@ class Map:
         ####################
 
         self.distance_transform_map_[self.obstacle_map_ == 1] = 0
-    # First pass: top-left to bottom-right
         for r in range(1, rows - 1):
             for c in range(1, cols - 1):
                 if self.obstacle_map_[r, c] == 1: 
@@ -85,7 +84,6 @@ class Map:
                     above = self.distance_transform_map_[r - 1, c] + 1
                     self.distance_transform_map_[r, c] = min(self.distance_transform_map_[r, c], left, above)
 
-        # Second pass: bottom-right to top-left
         for r in range(rows - 2, 0, -1):
             for c in range(cols - 2, 0, -1):
                 if self.obstacle_map_[r, c] == 1:

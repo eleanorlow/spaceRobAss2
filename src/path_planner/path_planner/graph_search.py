@@ -195,7 +195,6 @@ class GraphSearch:
     def get_minimum_cost_node(self, unvisited_set, heuristic=True):
         """Find the vertex with the minimum cost"""
 
-        # There's more efficient ways of doing this...
         min_cost = 99999999
         min_idx = None
 
@@ -247,22 +246,18 @@ class GraphSearch:
         # Task 8         ##
         ###################
 
-        # Set all parents and costs to zero
         for n in self.graph_.nodes_:
-            n.cost_to_node = 9999999 # a large number
-            n.cost_to_node_to_goal_heuristic = 999999999 # a large number
-            n.parent_node = None # invalid to begin with
+            n.cost_to_node = 9999999
+            n.cost_to_node_to_goal_heuristic = 999999999 
+            n.parent_node = None 
 
-        # Setup sets
         unvisited_set = []
         visited_set = []
 
-        # Add start node to visited set
         unvisited_set.append(start_idx)
         self.graph_.nodes_[start_idx].cost_to_node = 0
         self.graph_.nodes_[start_idx].cost_to_node_to_goal_heuristic = 0
 
-        # Loop until solution found
         while len(unvisited_set) > 0:
 
             # Select a node
@@ -277,67 +272,43 @@ class GraphSearch:
             current_node = self.graph_.nodes_[node_idx]
 
 
-
-            # Move node to visited
             visited_set.append(node_idx)
             unvisited_set.pop(node_in_unvisited_idx)
 
-
-
-            # For each neighbour of the node
             for neighbour_idx in range(len(self.graph_.nodes_[node_idx].neighbours)):
 
-                # For convenience, extract the neighbour and the edge cost from the arrays
                 neighbour = self.graph_.nodes_[node_idx].neighbours[neighbour_idx]
                 neighbour_cost = self.graph_.nodes_[node_idx].neighbour_costs[neighbour_idx]
 
-                # Check if neighbours is already in visited
                 if neighbour.idx in visited_set:
-                    
-                    # Do nothing
                     pass
                 
                 else:
 
-                    # Compute the cost of this neighbour node
-                    
                     ##########################
                     ## YOUR CODE GOES HERE  ##
                     ##########################
                     
                     tentative_cost = current_node.cost_to_node + neighbour_cost   
 
-
-                    # Check if neighbours is already in unvisited
                     if neighbour.idx in unvisited_set:
 
                         # If the cost is lower than the previous cost for this node
                         # Then update it to the new cost
                         # Also, update the parent pointer to point to the new parent 
 
-                        ##########################
-                        ## YOUR CODE GOES HERE  ##
-                        ## FIX THE ?? BELOW     ##
-                        ##########################
                         if tentative_cost < neighbour.cost_to_node:
                             neighbour.parent_node = current_node
                             neighbour.cost_to_node = tentative_cost
-
-                        
 
                     else:
 
                         # Initialise the cost and the parent pointer
                         # hint: this will be similar to your answer above
-                        #########################
-                        # YOUR CODE GOES HERE  ##
-                        # FIX THE ?? BELOW     ##
-                        #########################
+
                         unvisited_set.append(neighbour.idx)
                         neighbour.parent_node = current_node
                         neighbour.cost_to_node = tentative_cost
-
-
 
         return visited_set
 

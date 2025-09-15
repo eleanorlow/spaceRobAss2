@@ -37,11 +37,9 @@ class PathSmoother():
             p.y = float(node.y)
             path.append(p)
 
-        # Initialise the smooth path
+
         path_smooth = copy.deepcopy(path)
 
-        # Loop until the smoothing converges
-        # In each iteration, update every waypoint except the first and last waypoint
 
         ####################
         ## YOUR CODE HERE ##
@@ -54,7 +52,6 @@ class PathSmoother():
         while change >= e:
             change = 0.0
 
-                # Loop over all points except start and goal
             for i in range(1, len(path) - 1):
                 old_x, old_y = path_smooth[i].x, path_smooth[i].y
 

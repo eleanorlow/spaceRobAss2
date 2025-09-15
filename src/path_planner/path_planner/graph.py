@@ -304,24 +304,26 @@ class Graph:
         ## Task 10        ##
         ####################
         distance_transform_map = self.map_.distance_transform_map_
+        
+        idx = 0
 
+        while idx < num_nodes:
+            x = random.randint(self.map_.min_x_, self.map_.max_x_ - 1)
+            y = random.randint(self.map_.min_y_, self.map_.max_y_ - 1)
 
+            if not self.map_.is_occupied(x, y):
+                d_center = self.map_.distance_transform_map_[y, x] 
 
+                half_window = 5
+                rmin, rmax = max(0, y - half_window), min(self.map_.distance_transform_map_.shape[0], y + half_window + 1)
+                cmin, cmax = max(0, x - half_window), min(self.map_.distance_transform_map_.shape[1], x + half_window + 1)
 
+                neighborhood = self.map_.distance_transform_map_[rmin:rmax, cmin:cmax]
+                d_max = np.max(neighborhood)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+                if d_center >= 0.7 * d_max:
+                    self.nodes_.append(Node(x, y, idx))
+                    idx += 1
 
 
 
@@ -349,27 +351,23 @@ class Graph:
                                 ## YOUR CODE HERE         ##
                                 ## TASK 6 -- after TASK 10##
                                 ############################
-                                energy_cost = distance # Comment this out once you've done this Task
-                                # energy_cost = ??
+                                mew = 0.1
+                                m = 1025
+                                g = 3.71
+
+                                xi, yi, zi = self.map_.pixel_to_world(node_i.x, node_i.y)
+                                xj, yj, zj = self.map_.pixel_to_world(node_j.x, node_j.y)
+
+                                theta = math.atan((zi - zj)/ (math.sqrt((xi - xj)**2 + (yi - yj)**2)))
+                                dx = math.sqrt((xi - xj)**2 + (yi - yj)**2 + (zi - zj)**2)
+
+                                energy_cost = abs((mew*m*g*math.cos(theta)+m*g*math.sin(theta))*dx)
                                 
-
-
-
-
-
-
-
-
-
-
-
 
                             else:
 
-                                # Define the edge cost as standard 2D Euclidean distance in pixel coordinates
                                 energy_cost = distance
 
-                            # Create the edge
                             node_i.neighbours.append(node_j)
                             node_i.neighbour_costs.append(energy_cost)
 
@@ -411,10 +409,8 @@ class Graph:
         Also see GraphSearch.find_connected_nodes()
         """
 
-        # Setup GraphSearch object
         graph_search = GraphSearch(self.parent_logger_, self, False, 0.0)
 
-        # Setup groups list. Initially put all nodes in group "0"
         groups = [0]*len(self.nodes_)
 
         ####################
@@ -422,7 +418,6 @@ class Graph:
         ## Task 8         ##
         ####################
 
-        # Current group
         group_number = 1
 
         for i in range(len(self.nodes_)):
@@ -433,7 +428,6 @@ class Graph:
                 group_number += 1
 
 
-        # Save it here so it will show up in the visualisation as different colours
         self.groups_ = groups
         return groups
 
@@ -452,7 +446,6 @@ class Graph:
             cmap = matplotlib.cm.get_cmap('Set1')
             colors = cmap.colors[0:-2]
 
-            # print(self.groups_)
 
             self.marker_nodes_.points = []
             self.marker_nodes_.colors = []

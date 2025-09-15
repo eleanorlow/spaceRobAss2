@@ -282,8 +282,6 @@ class GraphSearch:
             visited_set.append(node_idx)
             unvisited_set.pop(node_in_unvisited_idx)
 
-
-
             # For each neighbour of the node
             for neighbour_idx in range(len(self.graph_.nodes_[node_idx].neighbours)):
 
@@ -293,20 +291,16 @@ class GraphSearch:
 
                 # Check if neighbours is already in visited
                 if neighbour.idx in visited_set:
-                    
                     # Do nothing
                     pass
                 
                 else:
 
-                    # Compute the cost of this neighbour node
-                    
                     ##########################
                     ## YOUR CODE GOES HERE  ##
                     ##########################
                     
                     tentative_cost = current_node.cost_to_node + neighbour_cost   
-
 
                     # Check if neighbours is already in unvisited
                     if neighbour.idx in unvisited_set:
@@ -315,29 +309,18 @@ class GraphSearch:
                         # Then update it to the new cost
                         # Also, update the parent pointer to point to the new parent 
 
-                        ##########################
-                        ## YOUR CODE GOES HERE  ##
-                        ## FIX THE ?? BELOW     ##
-                        ##########################
                         if tentative_cost < neighbour.cost_to_node:
                             neighbour.parent_node = current_node
                             neighbour.cost_to_node = tentative_cost
-
-                        
 
                     else:
 
                         # Initialise the cost and the parent pointer
                         # hint: this will be similar to your answer above
-                        #########################
-                        # YOUR CODE GOES HERE  ##
-                        # FIX THE ?? BELOW     ##
-                        #########################
+
                         unvisited_set.append(neighbour.idx)
                         neighbour.parent_node = current_node
                         neighbour.cost_to_node = tentative_cost
-
-
 
         return visited_set
 
